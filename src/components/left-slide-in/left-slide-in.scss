@@ -26,6 +26,10 @@
 			transition: all 0.4s;
 		}
 	}
+	&__content {
+		position: absolute;
+		top: 17rem;
+	}
 }
 
 .left-slide-in.open {

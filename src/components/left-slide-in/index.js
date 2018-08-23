@@ -1,5 +1,6 @@
 import './left-slide-in.scss'
 import React from 'react'
+import SectionItem from '../section-item'
 
 class LeftSlideIn extends React.Component {
 	render() {
@@ -13,7 +14,9 @@ class LeftSlideIn extends React.Component {
 						Hello {this.props.user ? this.props.user : 'User'}
 					</p>
 				</div>
-				<div className="left-slide-in__content" />
+				<div className="left-slide-in__content">
+					<SectionItem />
+				</div>
 			</div>
 		)
 	}

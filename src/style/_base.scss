@@ -1,0 +1,13 @@
+@import './_vars.scss';
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: initial;
+}
+html {
+	font-size: 62.5%;
+	color: $color-primary;
+}

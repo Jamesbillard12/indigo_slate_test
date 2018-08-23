@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../header'
+import SiteLocationBar from '../site-location-bar'
 
 class Landing extends React.Component {
 	state = { menuOpen: false }
@@ -15,6 +16,7 @@ class Landing extends React.Component {
 					menuOpen={this.state.menuOpen}
 					handleMenuOpenClose={this.handleMenuOpenClose}
 				/>
+				<SiteLocationBar />
 			</div>
 		)
 	}

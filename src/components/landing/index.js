@@ -18,7 +18,7 @@ class Landing extends React.Component {
 					handleMenuOpenClose={this.handleMenuOpenClose}
 				/>
 				<SiteLocationBar />
-				<LeftSlideIn />
+				<LeftSlideIn menuOpen={this.state.menuOpen} />
 			</div>
 		)
 	}

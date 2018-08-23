@@ -1,0 +1,50 @@
+@import '../../style/_vars.scss';
+
+.left-slide-in {
+	position: absolute;
+	top: 0;
+	left: -100vw;
+	width: 100vw;
+	background-color: $color-secondary;
+	z-index: 3;
+	transition-duration: 0.5s;
+	&__img {
+		position: absolute;
+		top: 6rem;
+		height: 11rem;
+		width: 100vw;
+		background-image: url('../../../assets/sky.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: top;
+		p {
+			margin-top: 2rem;
+			margin-left: 2rem;
+			color: #fff;
+			font-size: 2rem;
+			opacity: 1;
+			transition: all 0.4s;
+		}
+	}
+}
+
+.left-slide-in.open {
+	position: absolute;
+	top: 0;
+	left: 0vw;
+}
+
+p.fadein {
+	animation: fadeInText 0.5s ease-out 0.4s;
+	animation-fill-mode: backwards;
+}
+
+@keyframes fadeInText {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

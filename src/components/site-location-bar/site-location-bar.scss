@@ -1,9 +1,12 @@
 @import '../../style/_vars.scss';
 
 .site-location-bar {
+	position: absolute;
+	top: 6rem;
 	width: 100%;
 	height: 3rem;
 	background-color: $color-secondary;
+	z-index: 2;
 	&__text {
 		height: 100%;
 		display: inline-block;

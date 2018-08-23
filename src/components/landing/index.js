@@ -1,3 +1,4 @@
+import './landing.scss'
 import React from 'react'
 import Header from '../header'
 import SiteLocationBar from '../site-location-bar'
@@ -12,7 +13,7 @@ class Landing extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div style={{ height: window.innerHeight }} className="landing">
 				<Header
 					menuOpen={this.state.menuOpen}
 					handleMenuOpenClose={this.handleMenuOpenClose}

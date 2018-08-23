@@ -5,6 +5,7 @@ class LeftSlideIn extends React.Component {
 	render() {
 		return (
 			<div
+				style={{ height: window.innerHeight }}
 				className={this.props.menuOpen ? 'left-slide-in open' : 'left-slide-in'}
 			>
 				<div className="left-slide-in__img">

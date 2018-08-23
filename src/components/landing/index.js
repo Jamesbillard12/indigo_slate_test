@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../header'
 import SiteLocationBar from '../site-location-bar'
+import LeftSlideIn from '../left-slide-in'
 
 class Landing extends React.Component {
 	state = { menuOpen: false }
@@ -17,6 +18,7 @@ class Landing extends React.Component {
 					handleMenuOpenClose={this.handleMenuOpenClose}
 				/>
 				<SiteLocationBar />
+				<LeftSlideIn />
 			</div>
 		)
 	}

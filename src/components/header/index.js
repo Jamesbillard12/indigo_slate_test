@@ -7,7 +7,10 @@ class Header extends React.Component {
 		return (
 			<div className="header">
 				<div className="header__logo" />
-				<HeaderMenuButton />
+				<HeaderMenuButton
+					menuOpen={this.props.menuOpen}
+					handleMenuOpenClose={this.props.handleMenuOpenClose}
+				/>
 			</div>
 		)
 	}

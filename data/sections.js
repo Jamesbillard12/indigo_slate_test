@@ -94,18 +94,18 @@ export default [
 		icon: 'fas fa-lock'
 	},
 	{ id: 2, name: 'training', categories: [], icon: 'fas fa-dumbbell' },
-	{
-		id: 3,
-		name: 'administration',
-		categories: [1, 2, 3, 4],
-		icon: 'fas fa-user-tie'
-	},
-	{
-		id: 4,
-		name: 'catering & brand',
-		categories: [1, 2, 3, 4],
-		icon: 'fas fa-utensils'
-	},
+	// {
+	// 	id: 3,
+	// 	name: 'administration',
+	// 	categories: [1, 2, 3, 4],
+	// 	icon: 'fas fa-user-tie'
+	// },
+	// {
+	// 	id: 4,
+	// 	name: 'catering & brand',
+	// 	categories: [1, 2, 3, 4],
+	// 	icon: 'fas fa-utensils'
+	// },
 	{ id: 5, name: 'hotels', categories: [], icon: 'fas fa-hotel' },
 	{ id: 6, name: 'my base', categories: [], icon: 'fas fa-home' },
 	{ id: 7, name: 'recognition', categories: [], icon: 'fas fa-brain' },

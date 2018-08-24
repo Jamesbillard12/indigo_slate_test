@@ -1,5 +1,7 @@
 import './right-slide-in.scss'
 import React from 'react'
+import CategoryItem from '../category-item'
+import { renderIf } from '../../../lib/util'
 
 class RightSlideIn extends React.Component {
 	render() {
@@ -11,13 +13,25 @@ class RightSlideIn extends React.Component {
 				}
 			>
 				<div className="right-slide-in__title">
-					<p>{this.props.section.name || 'no title'}</p>
+					<p>{this.props.section.name || ''}</p>
 					<i
 						onClick={() => this.props.handleSectionArrowClick('')}
 						className="fas fa-times"
 					/>
 				</div>
-				<div />
+
+				<div className="right-slide-in__content">
+					{this.props.section.categories.map(category => {
+						return (
+							<CategoryItem
+								// handleSectionArrowClick={this.props.handleSectionArrowClick}
+								handleSectionBodyClick={this.props.handleSectionBodyClick}
+								key={category.id}
+								category={category}
+							/>
+						)
+					})}
+				</div>
 			</div>
 		)
 	}

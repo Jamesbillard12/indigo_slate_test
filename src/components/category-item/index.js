@@ -6,17 +6,20 @@ class CategoryItem extends React.Component {
 	state = {
 		categoryOpen: false
 	}
-	handleCategoryOpen = () => {
+	handleCategoryOpen = id => {
 		if (this.props.category.pages.length) {
 			this.setState({ categoryOpen: !this.state.categoryOpen })
+			this.props.handleCategoryClick(id)
 		} else {
 			this.props.handleSectionBodyClick()
 		}
 	}
 	render() {
-		console.log(this.props.category.pages)
 		return (
-			<div onClick={() => this.handleCategoryOpen()} className="category-item">
+			<div
+				onClick={() => this.handleCategoryOpen(this.props.category.id)}
+				className="category-item"
+			>
 				<div className="category-item__body">
 					<div className="category-item__text">
 						<p>{this.props.category.name}</p>

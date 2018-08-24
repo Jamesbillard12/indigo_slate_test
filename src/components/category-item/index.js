@@ -13,20 +13,14 @@ class CategoryItem extends React.Component {
 		console.log(this.props.category.pages)
 		return (
 			<div onClick={() => this.handleCategoryOpen()} className="category-item">
-				<div
-					// onClick={() => this.props.handleCategoryBodyClick(this.props.category.id)}
-					className="category-item__body"
-				>
+				<div className="category-item__body">
 					<div className="category-item__text">
 						<p>{this.props.category.name}</p>
 					</div>
 				</div>
 				{renderIf(
 					this.props.category.pages.length,
-					<div
-						// onClick={() => this.props.handleCategoryArrowClick(this.props.category.id)}
-						className="category-item__arrow_up"
-					>
+					<div className="category-item__arrow_up">
 						<i
 							className={
 								this.state.categoryOpen

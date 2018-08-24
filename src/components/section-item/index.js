@@ -7,7 +7,7 @@ const SectionItem = props => {
 	return (
 		<div className="section-item">
 			<div className="section-item__icon">
-				<i className="fab fa-500px" />
+				<i className={props.section.icon} />
 			</div>
 			<div className="section-item__text">
 				<p>{props.section.name}</p>

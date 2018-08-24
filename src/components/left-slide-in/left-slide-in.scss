@@ -27,15 +27,16 @@
 		}
 	}
 	&__content {
-		overflow: hidden;
 		position: absolute;
+		overflow: scroll;
 		width: 100%;
+		height: 50rem;
 		top: 17rem;
 	}
 }
 
 .left-slide-in.open {
-	position: relative;
+	position: absolute;
 	top: 0;
 	left: 0vw;
 }

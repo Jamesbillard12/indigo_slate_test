@@ -15,6 +15,10 @@ class Landing extends React.Component {
 		this.setState({ menuOpen: !this.state.menuOpen })
 	}
 
+	handleSectionClick = id => {
+		console.log('hello world', id)
+	}
+
 	render() {
 		return (
 			<div style={{ height: window.innerHeight }} className="landing">
@@ -26,6 +30,7 @@ class Landing extends React.Component {
 				<LeftSlideIn
 					sections={this.state.sections}
 					menuOpen={this.state.menuOpen}
+					handleSectionClick={this.handleSectionClick}
 				/>
 			</div>
 		)

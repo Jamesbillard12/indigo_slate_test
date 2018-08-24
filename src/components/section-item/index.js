@@ -4,7 +4,10 @@ import { renderIf } from '../../../lib/util.js'
 
 const SectionItem = props => {
 	return (
-		<div className="section-item">
+		<div
+			onClick={() => props.handleSectionClick(props.section.id)}
+			className="section-item"
+		>
 			<div className="section-item__icon">
 				<i className={props.section.icon} />
 			</div>

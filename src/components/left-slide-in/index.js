@@ -16,7 +16,13 @@ class LeftSlideIn extends React.Component {
 				</div>
 				<div className="left-slide-in__content">
 					{this.props.sections.map(section => {
-						return <SectionItem key={section.id} section={section} />
+						return (
+							<SectionItem
+								handleSectionClick={this.props.handleSectionClick}
+								key={section.id}
+								section={section}
+							/>
+						)
 					})}
 				</div>
 			</div>

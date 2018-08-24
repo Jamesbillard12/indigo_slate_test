@@ -6,6 +6,7 @@
 	text-transform: uppercase;
 	width: 100%;
 	border-bottom: solid $color-tertiary 0.1rem;
+	transition: all 0.4s;
 	&__body {
 		display: inline-block;
 		width: calc(100% - 6rem);
@@ -43,4 +44,9 @@
 			margin-left: 2.6rem;
 		}
 	}
+}
+
+.section-item.fadein {
+	animation: fadeInText 1s ease-out 0.65s;
+	animation-fill-mode: backwards;
 }

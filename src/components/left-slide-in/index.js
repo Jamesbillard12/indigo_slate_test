@@ -22,6 +22,7 @@ class LeftSlideIn extends React.Component {
 								handleSectionBodyClick={this.props.handleSectionBodyClick}
 								key={section.id}
 								section={section}
+								menuOpen={this.props.menuOpen}
 							/>
 						)
 					})}

@@ -4,7 +4,7 @@ import { renderIf } from '../../../lib/util.js'
 
 const SectionItem = props => {
 	return (
-		<div className="section-item">
+		<div className={props.menuOpen ? 'section-item fadein' : 'section-item'}>
 			<div
 				onClick={() => props.handleSectionBodyClick(props.section.id)}
 				className="section-item__body"

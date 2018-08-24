@@ -2,3 +2,14 @@ $color-primary: #01426a;
 $color-secondary: #2774ae;
 $color-tertiary: rgb(72, 169, 197);
 $color-highlight: rgb(179, 213, 125);
+
+
+@keyframes fadeInText {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

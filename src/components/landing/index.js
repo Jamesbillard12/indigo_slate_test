@@ -35,12 +35,17 @@ class Landing extends React.Component {
 					break
 				}
 			}
-
-			this.setState({
-				sectionId: id,
-				menuOpenRight: true,
-				selectedSection: selectedSection
-			})
+			if (selectedSection.categories.length) {
+				this.setState({
+					sectionId: id,
+					menuOpenRight: true,
+					selectedSection: selectedSection
+				})
+			} else {
+				this.setState({
+					menuOpen: false
+				})
+			}
 		}
 	}
 

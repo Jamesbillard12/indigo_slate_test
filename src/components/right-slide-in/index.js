@@ -60,6 +60,7 @@ class RightSlideIn extends React.Component {
 								{renderIf(
 									category.pages.length,
 									<PagesContainer
+										category={category}
 										categoryOpen={this.isCategoryOpen(category.id)}
 									/>
 								)}

@@ -1,5 +1,6 @@
 import './pages-container.scss'
 import React from 'react'
+import PagesItem from '../pages-item'
 
 class PagesContainer extends React.Component {
 	render() {
@@ -9,10 +10,9 @@ class PagesContainer extends React.Component {
 					this.props.categoryOpen ? 'pages-container active' : 'pages-container'
 				}
 			>
-				<p>hello</p>
-				<p>hello</p>
-				<p>hello</p>
-				<p>hello</p>
+				{this.props.category.pages.map(page => {
+					return <PagesItem page={page} />
+				})}
 			</div>
 		)
 	}

@@ -7,7 +7,11 @@ class CategoryItem extends React.Component {
 		categoryOpen: false
 	}
 	handleCategoryOpen = () => {
-		this.setState({ categoryOpen: !this.state.categoryOpen })
+		if (this.props.category.pages.length) {
+			this.setState({ categoryOpen: !this.state.categoryOpen })
+		} else {
+			this.props.handleSectionBodyClick()
+		}
 	}
 	render() {
 		console.log(this.props.category.pages)

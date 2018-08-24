@@ -25,7 +25,7 @@ class RightSlideIn extends React.Component {
 						return (
 							<CategoryItem
 								// handleSectionArrowClick={this.props.handleSectionArrowClick}
-								// handleSectionBodyClick={this.props.handleSectionBodyClick}
+								handleSectionBodyClick={this.props.handleSectionBodyClick}
 								key={category.id}
 								category={category}
 							/>

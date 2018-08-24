@@ -5,13 +5,17 @@ class RightSlideIn extends React.Component {
 	render() {
 		return (
 			<div
-				style={{ height: window.innerHeight }}
+				style={{ height: `calc(${window.innerHeight}px - 17rem)` }}
 				className={
 					this.props.menuOpenRight ? 'right-slide-in open' : 'right-slide-in'
 				}
 			>
 				<div className="right-slide-in__title">
-					<span>{this.props.section.name || 'no title'}</span>
+					<p>{this.props.section.name || 'no title'}</p>
+					<i
+						onClick={() => this.props.handleSectionClick('')}
+						className="fas fa-times"
+					/>
 				</div>
 			</div>
 		)

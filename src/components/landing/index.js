@@ -11,7 +11,8 @@ class Landing extends React.Component {
 		menuOpen: false,
 		menuOpenRight: false,
 		sections: Sections,
-		sectionId: ''
+		sectionId: '',
+		selectedSection: {}
 	}
 
 	handleMenuOpenClose = () => {
@@ -19,7 +20,28 @@ class Landing extends React.Component {
 	}
 
 	handleSectionClick = id => {
-		this.setState({ sectionId: id, menuOpenRight: !this.state.menuOpenRight })
+		if (id === '') {
+			this.setState({
+				sectionId: id,
+				menuOpenRight: false,
+				selectedSection: {}
+			})
+		} else {
+			let tempArr = [...this.state.sections]
+			let selectedSection
+			for (let section of tempArr) {
+				if (section.id === id) {
+					selectedSection = section
+					break
+				}
+			}
+
+			this.setState({
+				sectionId: id,
+				menuOpenRight: true,
+				selectedSection: selectedSection
+			})
+		}
 	}
 
 	render() {
@@ -35,19 +57,12 @@ class Landing extends React.Component {
 					menuOpen={this.state.menuOpen}
 					handleSectionClick={this.handleSectionClick}
 				/>
-				{this.state.sections.map(section => {
-					if (section.id === this.state.sectionId) {
-						return (
-							<RightSlideIn
-								section={section}
-								key={section.id}
-								menuOpenRight={this.state.menuOpenRight}
-							/>
-						)
-					} else {
-						return null
-					}
-				})}
+				<RightSlideIn
+					section={this.state.selectedSection}
+					menuOpenRight={this.state.menuOpenRight}
+					handleSectionClick={this.handleSectionClick}
+				/>
+				) })}
 			</div>
 		)
 	}

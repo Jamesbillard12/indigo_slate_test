@@ -7,15 +7,28 @@
 	width: calc(100vw - 6rem);
 	background-color: $color-secondary;
 	z-index: 3;
-	transition-duration: 0.5s;
-
-	h1 {
-		margin-top: 2rem;
-		margin-left: 2rem;
-		color: #fff;
-		font-size: 2rem;
-		opacity: 1;
-		transition: all 0.4s;
+	transition: 0.5s;
+	border-left: solid $color-tertiary 0.1rem;
+	&__title {
+		background-color: $color-tertiary;
+		height: 6rem;
+		p {
+			display: inline-block;
+			margin-top: 2rem;
+			margin-left: 2rem;
+			color: #fff;
+			font-size: 1.7rem;
+			opacity: 1;
+			transition: all 0.4s;
+			text-transform: uppercase;
+		}
+		i {
+			position: absolute;
+			top: 2rem;
+			right: 2rem;
+			float: right;
+			font-size: 1.7rem;
+		}
 	}
 }
 
@@ -36,5 +49,15 @@ p.fadein {
 
 	100% {
 		opacity: 1;
+	}
+}
+
+@keyframes moveInRight {
+	0% {
+		transform: translateX(10rem);
+	}
+
+	100% {
+		transform: translate(0);
 	}
 }

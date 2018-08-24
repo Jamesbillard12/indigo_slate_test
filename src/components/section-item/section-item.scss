@@ -12,7 +12,8 @@
 		width: 6rem;
 		i {
 			margin-top: 2rem;
-			margin-left: 2rem;
+			margin-left: 50%;
+			transform: translateX(-50%);
 		}
 	}
 	&__text {

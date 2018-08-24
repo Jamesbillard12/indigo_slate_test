@@ -1,0 +1,18 @@
+@import '../../style/_vars.scss';
+
+.pages-container {
+	padding: 0 18px;
+	background-color: white;
+	max-height: 0;
+	overflow: hidden;
+	transition-duration: 0.5s;
+	transition-delay: 0s;
+	p {
+		color: black;
+	}
+}
+
+.pages-container.active {
+	max-height: 100rem;
+	transition-delay: 0.3s;
+}

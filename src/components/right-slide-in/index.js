@@ -1,9 +1,36 @@
 import './right-slide-in.scss'
 import React from 'react'
+import { renderIf } from '../../../lib/util.js'
 import CategoryItem from '../category-item'
-import { renderIf } from '../../../lib/util'
+import PagesContainer from '../pages-container'
+const Fragment = React.Fragment
 
 class RightSlideIn extends React.Component {
+	state = {
+		categoryIdArr: []
+	}
+
+	handleCategoryClick = id => {
+		let tempArr = [...this.state.categoryIdArr]
+
+		if (tempArr.indexOf(id) !== -1) {
+			tempArr.splice(tempArr.indexOf(id), 1)
+			this.setState({ categoryIdArr: tempArr })
+			return
+		}
+
+		tempArr.push(id)
+		this.setState({ categoryIdArr: tempArr })
+	}
+
+	isCategoryOpen = id => {
+		if (this.state.categoryIdArr.indexOf(id) !== -1) {
+			return true
+		}
+
+		return false
+	}
+
 	render() {
 		return (
 			<div
@@ -23,12 +50,20 @@ class RightSlideIn extends React.Component {
 				<div className="right-slide-in__content">
 					{this.props.section.categories.map(category => {
 						return (
-							<CategoryItem
-								// handleSectionArrowClick={this.props.handleSectionArrowClick}
-								handleSectionBodyClick={this.props.handleSectionBodyClick}
-								key={category.id}
-								category={category}
-							/>
+							<Fragment>
+								<CategoryItem
+									handleSectionBodyClick={this.props.handleSectionBodyClick}
+									key={category.id}
+									category={category}
+									handleCategoryClick={this.handleCategoryClick}
+								/>
+								{renderIf(
+									category.pages.length,
+									<PagesContainer
+										categoryOpen={this.isCategoryOpen(category.id)}
+									/>
+								)}
+							</Fragment>
 						)
 					})}
 				</div>

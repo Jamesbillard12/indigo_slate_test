@@ -7,11 +7,22 @@
 	width: 100%;
 	border-bottom: solid $color-tertiary 0.1rem;
 	transition: all;
+	color: #fff;
 	&__body {
 		display: inline-block;
 		width: calc(100% - 6rem);
 		height: 6rem;
 		cursor: pointer;
+		transition-duration: 1s;
+		&--selected {
+			display: inline-block;
+			width: calc(100% - 6rem);
+			height: 6rem;
+			cursor: pointer;
+			background-color: #fff;
+			transition-duration: 1s;
+			color: $color-secondary;
+		}
 	}
 	&__icon {
 		display: inline-block;
@@ -21,11 +32,21 @@
 			margin-top: 2rem;
 			margin-left: 50%;
 			transform: translateX(-50%);
+			color: inherit;
+			&.transparent {
+				transition-duration: 0.3s;
+				margin-top: 2rem;
+				margin-left: 50%;
+				transform: translateX(-50%);
+				color: inherit;
+				opacity: 0.5;
+			}
 		}
 	}
 	&__text {
 		display: inline-block;
 		p {
+			color: inherit;
 		}
 	}
 	&__arrow_right {
@@ -36,10 +57,25 @@
 		transition: 0.5s;
 		background-color: $color-tertiary;
 		cursor: pointer;
+		&--selected {
+			float: right;
+			height: 100%;
+			width: 6rem;
+			opacity: 0.8;
+			transition: 0.5s;
+			background-color: #fff;
+			color: $color-secondary;
+			i {
+				color: inherit;
+				margin-top: 2rem;
+				margin-left: 2.6rem;
+			}
+		}
 		&:hover {
 			opacity: 1;
 		}
 		i {
+			color: inherit;
 			margin-top: 2rem;
 			margin-left: 2.6rem;
 		}

@@ -3,12 +3,20 @@ import React from 'react'
 import Header from '../header'
 import SiteLocationBar from '../site-location-bar'
 import LeftSlideIn from '../left-slide-in'
+import Sections from '../../../data/sections.js'
 
 class Landing extends React.Component {
-	state = { menuOpen: false }
+	state = {
+		menuOpen: false,
+		sections: Sections
+	}
 
 	handleMenuOpenClose = () => {
 		this.setState({ menuOpen: !this.state.menuOpen })
+	}
+
+	handleSectionClick = id => {
+		console.log('hello world', id)
 	}
 
 	render() {
@@ -19,7 +27,11 @@ class Landing extends React.Component {
 					handleMenuOpenClose={this.handleMenuOpenClose}
 				/>
 				<SiteLocationBar />
-				<LeftSlideIn menuOpen={this.state.menuOpen} />
+				<LeftSlideIn
+					sections={this.state.sections}
+					menuOpen={this.state.menuOpen}
+					handleSectionClick={this.handleSectionClick}
+				/>
 			</div>
 		)
 	}

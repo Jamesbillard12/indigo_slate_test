@@ -21,11 +21,13 @@ class Landing extends React.Component {
 	}
 
 	handleSectionBodyClick = id => {
-		if (this.state.menuOpenRight) {
+		if (this.state.menuOpenRight && id) {
 			this.setState({ menuOpenRight: false })
+			return
 		}
 		this.setState({
-			menuOpen: false
+			menuOpen: false,
+			menuOpenRight: false
 		})
 	}
 	handleSectionArrowClick = id => {

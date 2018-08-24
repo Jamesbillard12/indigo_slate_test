@@ -17,23 +17,19 @@ class Landing extends React.Component {
 	}
 
 	handleMenuOpenClose = () => {
-		if (this.state.menuOpenRight) {
-			this.setState({ menuOpenRight: false })
-			return
-		}
 		this.setState({ menuOpen: !this.state.menuOpen, menuOpenRight: false })
 	}
 
 	handleSectionBodyClick = id => {
+		if (this.state.menuOpenRight) {
+			this.setState({ menuOpenRight: false })
+			return
+		}
 		this.setState({
 			menuOpen: false
 		})
 	}
 	handleSectionArrowClick = id => {
-		if (this.state.menuOpenRight) {
-			this.setState({ menuOpenRight: false })
-			return
-		}
 		if (id === '') {
 			this.setState({
 				sectionId: id,

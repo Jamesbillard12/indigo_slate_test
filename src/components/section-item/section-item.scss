@@ -8,8 +8,9 @@
 	border-bottom: solid $color-tertiary 0.1rem;
 	&__body {
 		display: inline-block;
-		width: 55rem;
+		width: calc(100% - 6rem);
 		height: 6rem;
+		cursor: pointer;
 	}
 	&__icon {
 		display: inline-block;
@@ -30,8 +31,13 @@
 		float: right;
 		height: 100%;
 		width: 6rem;
+		opacity: 0.8;
+		transition: 0.5s;
 		background-color: $color-tertiary;
 		cursor: pointer;
+		&:hover {
+			opacity: 1;
+		}
 		i {
 			margin-top: 2rem;
 			margin-left: 2.6rem;

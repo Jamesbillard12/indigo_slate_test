@@ -3,7 +3,6 @@ $color-secondary: #2774ae;
 $color-tertiary: rgb(72, 169, 197);
 $color-highlight: rgb(179, 213, 125);
 
-
 @keyframes fadeInText {
 	0% {
 		opacity: 0;
@@ -11,5 +10,15 @@ $color-highlight: rgb(179, 213, 125);
 
 	100% {
 		opacity: 1;
+	}
+}
+
+@keyframes moveInRight {
+	0% {
+		transform: translateX(10rem);
+	}
+
+	100% {
+		transform: translate(0);
 	}
 }

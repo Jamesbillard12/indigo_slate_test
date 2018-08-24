@@ -13,7 +13,7 @@ class Landing extends React.Component {
 		menuOpenRight: false,
 		sections: Sections,
 		sectionId: '',
-		selectedSection: {}
+		selectedSection: { categories: [] }
 	}
 
 	handleMenuOpenClose = () => {
@@ -34,7 +34,7 @@ class Landing extends React.Component {
 			this.setState({
 				sectionId: id,
 				menuOpenRight: false,
-				selectedSection: {}
+				selectedSection: { categories: [] }
 			})
 		} else {
 			let tempArr = [...this.state.sections]

@@ -3,7 +3,7 @@
 .right-slide-in {
 	position: absolute;
 	top: 17rem;
-	left: 200vw;
+	left: 100vw;
 	width: calc(100vw - 6rem);
 	background-color: $color-secondary;
 	z-index: 3;
@@ -28,6 +28,7 @@
 			right: 2rem;
 			float: right;
 			font-size: 1.7rem;
+			cursor: pointer;
 		}
 	}
 }

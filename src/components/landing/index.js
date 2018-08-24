@@ -1,5 +1,6 @@
 import './landing.scss'
 import React from 'react'
+import { renderIf } from '../../../lib/util.js'
 import Header from '../header'
 import SiteLocationBar from '../site-location-bar'
 import LeftSlideIn from '../left-slide-in'
@@ -16,10 +17,14 @@ class Landing extends React.Component {
 	}
 
 	handleMenuOpenClose = () => {
-		this.setState({ menuOpen: !this.state.menuOpen })
+		this.setState({ menuOpen: !this.state.menuOpen, menuOpenRight: false })
 	}
 
 	handleSectionClick = id => {
+		if (this.state.menuOpenRight) {
+			this.setState({ menuOpenRight: false })
+			return
+		}
 		if (id === '') {
 			this.setState({
 				sectionId: id,
@@ -62,12 +67,12 @@ class Landing extends React.Component {
 					menuOpen={this.state.menuOpen}
 					handleSectionClick={this.handleSectionClick}
 				/>
+
 				<RightSlideIn
 					section={this.state.selectedSection}
 					menuOpenRight={this.state.menuOpenRight}
 					handleSectionClick={this.handleSectionClick}
 				/>
-				) })}
 			</div>
 		)
 	}

@@ -10,7 +10,9 @@ class RightSlideIn extends React.Component {
 					this.props.menuOpenRight ? 'right-slide-in open' : 'right-slide-in'
 				}
 			>
-				<h1>place holder</h1>
+				<div className="right-slide-in__title">
+					<span>{this.props.section.name || 'no title'}</span>
+				</div>
 			</div>
 		)
 	}

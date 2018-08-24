@@ -17,10 +17,19 @@ class Landing extends React.Component {
 	}
 
 	handleMenuOpenClose = () => {
+		if (this.state.menuOpenRight) {
+			this.setState({ menuOpenRight: false })
+			return
+		}
 		this.setState({ menuOpen: !this.state.menuOpen, menuOpenRight: false })
 	}
 
-	handleSectionClick = id => {
+	handleSectionBodyClick = id => {
+		this.setState({
+			menuOpen: false
+		})
+	}
+	handleSectionArrowClick = id => {
 		if (this.state.menuOpenRight) {
 			this.setState({ menuOpenRight: false })
 			return
@@ -65,13 +74,15 @@ class Landing extends React.Component {
 				<LeftSlideIn
 					sections={this.state.sections}
 					menuOpen={this.state.menuOpen}
-					handleSectionClick={this.handleSectionClick}
+					handleSectionArrowClick={this.handleSectionArrowClick}
+					handleSectionBodyClick={this.handleSectionBodyClick}
 				/>
 
 				<RightSlideIn
 					section={this.state.selectedSection}
 					menuOpenRight={this.state.menuOpenRight}
-					handleSectionClick={this.handleSectionClick}
+					handleSectionArrowClick={this.handleSectionArrowClick}
+					handleSectionBodyClick={this.handleSectionBodyClick}
 				/>
 			</div>
 		)

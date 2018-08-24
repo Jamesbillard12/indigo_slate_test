@@ -13,10 +13,11 @@ class RightSlideIn extends React.Component {
 				<div className="right-slide-in__title">
 					<p>{this.props.section.name || 'no title'}</p>
 					<i
-						onClick={() => this.props.handleSectionClick('')}
+						onClick={() => this.props.handleSectionArrowClick('')}
 						className="fas fa-times"
 					/>
 				</div>
+				<div />
 			</div>
 		)
 	}

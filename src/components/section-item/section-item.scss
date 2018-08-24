@@ -6,6 +6,11 @@
 	text-transform: uppercase;
 	width: 100%;
 	border-bottom: solid $color-tertiary 0.1rem;
+	&__body {
+		display: inline-block;
+		width: 55rem;
+		height: 6rem;
+	}
 	&__icon {
 		display: inline-block;
 		height: 100%;
@@ -26,6 +31,7 @@
 		height: 100%;
 		width: 6rem;
 		background-color: $color-tertiary;
+		cursor: pointer;
 		i {
 			margin-top: 2rem;
 			margin-left: 2.6rem;

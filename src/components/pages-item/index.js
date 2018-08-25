@@ -5,8 +5,10 @@ const PagesItem = props => {
 	return (
 		<div
 			onClick={() => {
-				props.handleUpdateSiteLocationPage(props.page.name)
-				props.handleCreateSiteLocation()
+				props.handleUpdateSiteLocationPage(props.page.name).then(() => {
+					props.handleCreateSiteLocation()
+					props.handleSectionBodyClick()
+				})
 			}}
 			className="pages-item"
 		>

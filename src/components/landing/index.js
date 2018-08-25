@@ -49,12 +49,21 @@ class Landing extends React.Component {
 
 	handleUpdateSiteLocationSection = section => {
 		return new Promise(resolve => {
-			this.setState({ sectionTitle: section }, () => resolve(''))
+			this.setState(
+				{
+					sectionTitle: section,
+					categoryTitle: undefined,
+					pageTitle: undefined
+				},
+				() => resolve('')
+			)
 		})
 	}
 	handleUpdateSiteLocationCategory = category => {
 		return new Promise(resolve => {
-			this.setState({ categoryTitle: category }, () => resolve(''))
+			this.setState({ categoryTitle: category, pageTitle: undefined }, () =>
+				resolve('')
+			)
 		})
 	}
 	handleUpdateSiteLocationPage = page => {

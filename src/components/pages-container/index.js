@@ -19,6 +19,7 @@ class PagesContainer extends React.Component {
 								this.props.handleUpdateSiteLocationPage
 							}
 							handleCreateSiteLocation={this.props.handleCreateSiteLocation}
+							handleSectionBodyClick={this.props.handleSectionBodyClick}
 						/>
 					)
 				})}

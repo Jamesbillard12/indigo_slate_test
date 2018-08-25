@@ -13,8 +13,11 @@ class CategoryItem extends React.Component {
 			this.props.handleUpdateSiteLocationCategory(this.props.category.name)
 		} else {
 			this.props.handleSectionBodyClick()
-			this.props.handleUpdateSiteLocationCategory(this.props.category.name)
-			this.props.handleCreateSiteLocation()
+			this.props
+				.handleUpdateSiteLocationCategory(this.props.category.name)
+				.then(() => {
+					this.props.handleCreateSiteLocation()
+				})
 		}
 	}
 	render() {

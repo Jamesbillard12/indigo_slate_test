@@ -67,6 +67,7 @@ class RightSlideIn extends React.Component {
 									<PagesContainer
 										category={category}
 										categoryOpen={this.isCategoryOpen(category.id)}
+										handleSectionBodyClick={this.props.handleSectionBodyClick}
 										handleUpdateSiteLocationPage={
 											this.props.handleUpdateSiteLocationPage
 										}

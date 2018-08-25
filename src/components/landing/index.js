@@ -38,7 +38,8 @@ class Landing extends React.Component {
 		if (this.state.menuOpenRight && id) {
 			this.setState({
 				menuOpenRight: false,
-				selectedSection: { categories: [] }
+				selectedSection: { categories: [] },
+				categoryIdArr: []
 			})
 			return
 		}

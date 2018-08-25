@@ -14,14 +14,23 @@ class LeftSlideIn extends React.Component {
 						Hello {this.props.user ? this.props.user : 'User'}
 					</p>
 				</div>
-				<div className="left-slide-in__content">
+				<div
+					style={{ height: `calc(${window.innerHeight}px - 17rem)` }}
+					className="left-slide-in__content"
+				>
 					{this.props.sections.map(section => {
 						return (
 							<SectionItem
+								selected={section.id === this.props.selectedSection.id}
+								notSelected={
+									!isNaN(this.props.selectedSection.id) &&
+									section.id !== this.props.selectedSection.id
+								}
 								handleSectionArrowClick={this.props.handleSectionArrowClick}
 								handleSectionBodyClick={this.props.handleSectionBodyClick}
 								key={section.id}
 								section={section}
+								menuOpen={this.props.menuOpen}
 							/>
 						)
 					})}

@@ -16,7 +16,7 @@
 		background-image: url('../../../assets/sky.jpg');
 		background-repeat: no-repeat;
 		background-size: cover;
-		background-position: top;
+		background-position: bottom;
 		p {
 			margin-top: 2rem;
 			margin-left: 2rem;
@@ -29,8 +29,8 @@
 	&__content {
 		position: absolute;
 		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
 		width: 100%;
-		height: calc(100vh - 17rem);
 		top: 17rem;
 	}
 }

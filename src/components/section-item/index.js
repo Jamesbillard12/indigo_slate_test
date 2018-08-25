@@ -4,13 +4,21 @@ import { renderIf } from '../../../lib/util.js'
 
 const SectionItem = props => {
 	return (
-		<div className="section-item">
+		<div className={props.menuOpen ? 'section-item fadein' : 'section-item'}>
 			<div
 				onClick={() => props.handleSectionBodyClick(props.section.id)}
-				className="section-item__body"
+				className={
+					props.selected ? 'section-item__body--selected' : 'section-item__body'
+				}
 			>
 				<div className="section-item__icon">
-					<i className={props.section.icon} />
+					<i
+						className={
+							props.notSelected
+								? props.section.icon + ' transparent'
+								: props.section.icon
+						}
+					/>
 				</div>
 				<div className="section-item__text">
 					<p>{props.section.name}</p>
@@ -20,7 +28,11 @@ const SectionItem = props => {
 				props.section.categories.length,
 				<div
 					onClick={() => props.handleSectionArrowClick(props.section.id)}
-					className="section-item__arrow_right"
+					className={
+						props.selected
+							? 'section-item__arrow_right--selected'
+							: 'section-item__arrow_right'
+					}
 				>
 					<i className="fas fa-angle-right" />
 				</div>

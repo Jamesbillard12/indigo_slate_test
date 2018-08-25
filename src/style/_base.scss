@@ -7,7 +7,9 @@
 	padding: 0;
 	box-sizing: initial;
 }
-html {
+html,
+body {
+	position: relative;
 	font-size: 62.5%;
 	color: $color-primary;
 	overflow: hidden;

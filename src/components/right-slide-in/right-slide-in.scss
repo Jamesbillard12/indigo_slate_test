@@ -7,7 +7,8 @@
 	width: calc(100vw - 6rem);
 	background-color: $color-secondary;
 	z-index: 3;
-	transition: 0.5s;
+	transition-delay: 0s;
+	transition-duration: 0.5s;
 	border-left: solid $color-tertiary 0.1rem;
 	&__title {
 		background-color: $color-tertiary;
@@ -31,9 +32,14 @@
 			cursor: pointer;
 		}
 	}
+	&__content {
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
 }
 
 .right-slide-in.open {
+	transition-delay: 0.5s;
 	position: absolute;
 	left: 6rem;
 }

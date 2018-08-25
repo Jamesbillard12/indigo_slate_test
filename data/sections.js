@@ -94,18 +94,170 @@ export default [
 		icon: 'fas fa-lock'
 	},
 	{ id: 2, name: 'training', categories: [], icon: 'fas fa-dumbbell' },
-	// {
-	// 	id: 3,
-	// 	name: 'administration',
-	// 	categories: [1, 2, 3, 4],
-	// 	icon: 'fas fa-user-tie'
-	// },
-	// {
-	// 	id: 4,
-	// 	name: 'catering & brand',
-	// 	categories: [1, 2, 3, 4],
-	// 	icon: 'fas fa-utensils'
-	// },
+	{
+		id: 3,
+		name: 'administration',
+		categories: [
+			{
+				parentId: 3,
+				id: 0,
+				name: 'OJI and leaves',
+				pages: [
+					{
+						grandparentId: 3,
+						parentId: 0,
+						id: 0,
+						name: '1-21 injury reporting'
+					},
+					{
+						grandparentId: 3,
+						parentId: 0,
+						id: 1,
+						name: 'ASAP reporting'
+					},
+					{
+						grandparentId: 3,
+						parentId: 0,
+						id: 2,
+						name: 'general ASAP information'
+					},
+					{
+						grandparentId: 3,
+						parentId: 0,
+						id: 3,
+						name: 'flight attendant incident report'
+					}
+				]
+			},
+			{
+				parentId: 3,
+				id: 1,
+				name: 'Pay and Benefits',
+				pages: [
+					{
+						grandparentId: 3,
+						parentId: 1,
+						id: 0,
+						name: 'pay'
+					},
+					{
+						grandparentId: 3,
+						parentId: 1,
+						id: 1,
+						name: 'benefits'
+					}
+				]
+			},
+			{
+				parentId: 3,
+				id: 2,
+				name: 'preformance',
+				pages: [
+					{
+						grandparentId: 3,
+						parentId: 2,
+						id: 0,
+						name: 'good'
+					},
+					{
+						grandparentId: 3,
+						parentId: 2,
+						id: 1,
+						name: 'bad'
+					}
+				]
+			},
+			{
+				parentId: 3,
+				id: 3,
+				name: 'inflight resource directory',
+				pages: []
+			},
+			{
+				parentId: 3,
+				id: 4,
+				name: 'mobile & web',
+				pages: [
+					{
+						grandparentId: 3,
+						parentId: 4,
+						id: 0,
+						name: 'mobile'
+					},
+					{
+						grandparentId: 3,
+						parentId: 4,
+						id: 1,
+						name: 'web'
+					}
+				]
+			},
+			{
+				parentId: 3,
+				id: 5,
+				name: 'AFA',
+				pages: []
+			}
+		],
+		icon: 'fas fa-user-tie'
+	},
+	{
+		id: 4,
+		name: 'catering & brand',
+		categories: [
+			{
+				parentId: 4,
+				id: 0,
+				name: 'catering',
+				pages: [
+					{
+						grandparentId: 4,
+						parentId: 0,
+						id: 0,
+						name: 'food'
+					},
+					{
+						grandparentId: 4,
+						parentId: 0,
+						id: 1,
+						name: 'drink'
+					},
+					{
+						grandparentId: 4,
+						parentId: 0,
+						id: 2,
+						name: 'alcohol'
+					}
+				]
+			},
+			{
+				parentId: 4,
+				id: 1,
+				name: 'brand',
+				pages: [
+					{
+						grandparentId: 4,
+						parentId: 1,
+						id: 0,
+						name: 'company colors'
+					},
+					{
+						grandparentId: 4,
+						parentId: 1,
+						id: 1,
+						name: 'uniforms'
+					},
+					{
+						grandparentId: 4,
+						parentId: 1,
+						id: 2,
+						name: 'vision'
+					}
+				]
+			}
+		],
+		icon: 'fas fa-utensils'
+	},
 	{ id: 5, name: 'hotels', categories: [], icon: 'fas fa-hotel' },
 	{ id: 6, name: 'my base', categories: [], icon: 'fas fa-home' },
 	{ id: 7, name: 'recognition', categories: [], icon: 'fas fa-brain' },

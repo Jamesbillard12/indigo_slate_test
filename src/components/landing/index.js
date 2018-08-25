@@ -8,6 +8,7 @@ import Sections from '../../../data/sections.js'
 
 class Landing extends React.Component {
 	state = {
+		user: 'Donovan Beck',
 		menuOpen: false,
 		menuOpenRight: false,
 		sections: Sections,
@@ -118,6 +119,7 @@ class Landing extends React.Component {
 				/>
 				<SiteLocationBar siteLocation={this.state.siteLocation} />
 				<LeftSlideIn
+					user={this.state.user}
 					sections={this.state.sections}
 					menuOpen={this.state.menuOpen}
 					menuOpenRight={this.state.menuOpenRight}

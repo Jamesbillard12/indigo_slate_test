@@ -3,7 +3,6 @@ import { renderIf } from '../../../lib/util.js'
 import React from 'react'
 
 const SiteLocationBar = props => {
-	console.log(props)
 	return (
 		<div className="site-location-bar">
 			<div className="site-location-bar__text">

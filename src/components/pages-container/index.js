@@ -11,7 +11,16 @@ class PagesContainer extends React.Component {
 				}
 			>
 				{this.props.category.pages.map(page => {
-					return <PagesItem key={page.id} page={page} />
+					return (
+						<PagesItem
+							key={page.id}
+							page={page}
+							handleUpdateSiteLocationPage={
+								this.props.handleUpdateSiteLocationPage
+							}
+							handleCreateSiteLocation={this.props.handleCreateSiteLocation}
+						/>
+					)
 				})}
 			</div>
 		)

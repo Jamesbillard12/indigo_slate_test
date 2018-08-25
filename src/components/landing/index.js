@@ -16,7 +16,8 @@ class Landing extends React.Component {
 		categoryIdArr: [],
 		sectionTitle: undefined,
 		categoryTitle: undefined,
-		pageTitle: undefined
+		pageTitle: undefined,
+		siteLocation: undefined
 	}
 
 	handleUpdateCategoryIdArr = arr => {
@@ -47,13 +48,26 @@ class Landing extends React.Component {
 	}
 
 	handleUpdateSiteLocationSection = section => {
-		this.setState({ sectionTitle: section })
+		return new Promise(resolve => {
+			this.setState({ sectionTitle: section }, () => resolve(''))
+		})
 	}
 	handleUpdateSiteLocationCategory = category => {
-		this.setState({ categoryTitle: category })
+		return new Promise(resolve => {
+			this.setState({ categoryTitle: category }, () => resolve(''))
+		})
 	}
 	handleUpdateSiteLocationPage = page => {
-		this.setState({ pageTitle: page })
+		return new Promise(resolve => {
+			this.setState({ pageTitle: page }, () => resolve(''))
+		})
+	}
+
+	handleCreateSiteLocation = () => {
+		let siteLocation = `${this.state.sectionTitle} ${
+			this.state.categoryTitle ? '> ' + this.state.categoryTitle : ''
+		} ${this.state.pageTitle ? '> ' + this.state.pageTitle : ''}`
+		this.setState({ siteLocation: siteLocation })
 	}
 
 	handleSectionArrowClick = id => {
@@ -93,11 +107,7 @@ class Landing extends React.Component {
 					menuOpen={this.state.menuOpen}
 					handleMenuOpenClose={this.handleMenuOpenClose}
 				/>
-				<SiteLocationBar
-					sectionTitle={this.state.sectionTitle}
-					categoryTitle={this.state.categoryTitle}
-					pageTitle={this.state.pageTitle}
-				/>
+				<SiteLocationBar siteLocation={this.state.siteLocation} />
 				<LeftSlideIn
 					sections={this.state.sections}
 					menuOpen={this.state.menuOpen}
@@ -106,6 +116,7 @@ class Landing extends React.Component {
 					handleSectionArrowClick={this.handleSectionArrowClick}
 					handleSectionBodyClick={this.handleSectionBodyClick}
 					handleUpdateSiteLocationSection={this.handleUpdateSiteLocationSection}
+					handleCreateSiteLocation={this.handleCreateSiteLocation}
 				/>
 
 				<RightSlideIn
@@ -115,6 +126,11 @@ class Landing extends React.Component {
 					handleSectionArrowClick={this.handleSectionArrowClick}
 					handleSectionBodyClick={this.handleSectionBodyClick}
 					handleUpdateCategoryIdArr={this.handleUpdateCategoryIdArr}
+					handleCreateSiteLocation={this.handleCreateSiteLocation}
+					handleUpdateSiteLocationCategory={
+						this.handleUpdateSiteLocationCategory
+					}
+					handleUpdateSiteLocationPage={this.handleUpdateSiteLocationPage}
 				/>
 			</div>
 		)

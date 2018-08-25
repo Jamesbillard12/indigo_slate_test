@@ -8,7 +8,9 @@ const SectionItem = props => {
 			<div
 				onClick={() => {
 					props.handleSectionBodyClick(props.section.id)
-					props.handleUpdateSiteLocationSection(props.section.name)
+					props.handleUpdateSiteLocationSection(props.section.name).then(() => {
+						props.handleCreateSiteLocation()
+					})
 				}}
 				className={
 					props.selected ? 'section-item__body--selected' : 'section-item__body'

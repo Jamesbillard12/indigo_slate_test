@@ -43,6 +43,7 @@ class LeftSlideIn extends React.Component {
 								handleUpdateSiteLocationSection={
 									this.props.handleUpdateSiteLocationSection
 								}
+								handleCreateSiteLocation={this.props.handleCreateSiteLocation}
 							/>
 						)
 					})}

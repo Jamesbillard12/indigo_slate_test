@@ -8,12 +8,8 @@ const SiteLocationBar = props => {
 		<div className="site-location-bar">
 			<div className="site-location-bar__text">
 				{renderIf(
-					props.sectionTitle,
-					<p>
-						{props.sectionTitle ? props.sectionTitle : ''}{' '}
-						{props.categoryTitle ? `> ${props.categoryTitle} ` : ''}
-						{props.pageTitle ? `> ${props.pageTitle}` : ''}
-					</p>,
+					props.siteLocation,
+					<p>{props.siteLocation}</p>,
 					<p>section > page title</p>
 				)}
 			</div>

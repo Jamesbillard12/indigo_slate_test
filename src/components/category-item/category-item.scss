@@ -6,6 +6,7 @@
 	text-transform: capitalize;
 	width: 100%;
 	border-bottom: solid $color-tertiary 0.1rem;
+	transition-duration: 0.5s;
 	&__body {
 		display: inline-block;
 		width: calc(100% - 6rem);
@@ -44,4 +45,8 @@
 			margin-left: 2.6rem;
 		}
 	}
+}
+
+.category-item.open {
+	background-color: $color-tertiary;
 }

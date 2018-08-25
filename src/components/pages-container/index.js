@@ -11,7 +11,7 @@ class PagesContainer extends React.Component {
 				}
 			>
 				{this.props.category.pages.map(page => {
-					return <PagesItem page={page} />
+					return <PagesItem key={page.id} page={page} />
 				})}
 			</div>
 		)

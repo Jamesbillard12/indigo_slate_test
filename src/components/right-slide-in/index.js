@@ -6,25 +6,21 @@ import PagesContainer from '../pages-container'
 const Fragment = React.Fragment
 
 class RightSlideIn extends React.Component {
-	state = {
-		categoryIdArr: []
-	}
-
 	handleCategoryClick = id => {
-		let tempArr = [...this.state.categoryIdArr]
+		let tempArr = [...this.props.categoryIdArr]
 
 		if (tempArr.indexOf(id) !== -1) {
 			tempArr.splice(tempArr.indexOf(id), 1)
-			this.setState({ categoryIdArr: tempArr })
+			this.props.handleUpdateCategoryIdArr(tempArr)
 			return
 		}
 
 		tempArr.push(id)
-		this.setState({ categoryIdArr: tempArr })
+		this.props.handleUpdateCategoryIdArr(tempArr)
 	}
 
 	isCategoryOpen = id => {
-		if (this.state.categoryIdArr.indexOf(id) !== -1) {
+		if (this.props.categoryIdArr.indexOf(id) !== -1) {
 			return true
 		}
 
@@ -42,7 +38,10 @@ class RightSlideIn extends React.Component {
 				<div className="right-slide-in__title">
 					<p>{this.props.section.name || ''}</p>
 					<i
-						onClick={() => this.props.handleSectionArrowClick('')}
+						onClick={() => {
+							this.props.handleSectionArrowClick('')
+							this.props.handleUpdateCategoryIdArr([])
+						}}
 						className="fas fa-times"
 					/>
 				</div>
@@ -51,12 +50,11 @@ class RightSlideIn extends React.Component {
 					style={{ height: `calc(${window.innerHeight}px - 23rem)` }}
 					className="right-slide-in__content"
 				>
-					{this.props.section.categories.map(category => {
+					{this.props.section.categories.map((category, i) => {
 						return (
-							<Fragment>
+							<Fragment key={category.id}>
 								<CategoryItem
 									handleSectionBodyClick={this.props.handleSectionBodyClick}
-									key={category.id}
 									category={category}
 									handleCategoryClick={this.handleCategoryClick}
 								/>

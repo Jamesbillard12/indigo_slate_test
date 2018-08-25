@@ -11,14 +11,16 @@ class CategoryItem extends React.Component {
 			this.setState({ categoryOpen: !this.state.categoryOpen })
 			this.props.handleCategoryClick(id)
 		} else {
-			this.props.handleSectionBodyClick(id)
+			this.props.handleSectionBodyClick()
 		}
 	}
 	render() {
 		return (
 			<div
 				onClick={() => this.handleCategoryOpen(this.props.category.id)}
-				className="category-item"
+				className={
+					this.state.categoryOpen ? 'category-item open' : 'category-item'
+				}
 			>
 				<div className="category-item__body">
 					<div className="category-item__text">

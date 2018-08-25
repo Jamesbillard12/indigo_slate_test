@@ -50,12 +50,11 @@ class RightSlideIn extends React.Component {
 					style={{ height: `calc(${window.innerHeight}px - 23rem)` }}
 					className="right-slide-in__content"
 				>
-					{this.props.section.categories.map(category => {
+					{this.props.section.categories.map((category, i) => {
 						return (
-							<Fragment>
+							<Fragment key={category.id}>
 								<CategoryItem
 									handleSectionBodyClick={this.props.handleSectionBodyClick}
-									key={category.id}
 									category={category}
 									handleCategoryClick={this.handleCategoryClick}
 								/>

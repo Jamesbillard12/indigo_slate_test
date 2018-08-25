@@ -1,13 +1,12 @@
 @import '../../style/_vars.scss';
 
 .right-slide-in {
-	position: relative;
+	position: absolute;
 	top: 17rem;
 	left: 100vw;
 	width: calc(100vw - 6rem);
 	background-color: $color-secondary;
 	z-index: 3;
-	transition-delay: 0s;
 	transition-duration: 0.5s;
 	border-left: solid $color-tertiary 0.1rem;
 	&__title {

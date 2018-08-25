@@ -1,6 +1,5 @@
 import './landing.scss'
 import React from 'react'
-import { renderIf } from '../../../lib/util.js'
 import Header from '../header'
 import SiteLocationBar from '../site-location-bar'
 import LeftSlideIn from '../left-slide-in'
@@ -91,9 +90,9 @@ class Landing extends React.Component {
 				/>
 
 				<RightSlideIn
+					menuOpenRight={this.state.menuOpenRight}
 					categoryIdArr={this.state.categoryIdArr}
 					section={this.state.selectedSection}
-					menuOpenRight={this.state.menuOpenRight}
 					handleSectionArrowClick={this.handleSectionArrowClick}
 					handleSectionBodyClick={this.handleSectionBodyClick}
 					handleUpdateCategoryIdArr={this.handleUpdateCategoryIdArr}

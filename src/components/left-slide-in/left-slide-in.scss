@@ -29,6 +29,7 @@
 	&__content {
 		position: absolute;
 		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
 		width: 100%;
 		top: 17rem;
 	}

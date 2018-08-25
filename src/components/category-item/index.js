@@ -11,7 +11,7 @@ class CategoryItem extends React.Component {
 			this.setState({ categoryOpen: !this.state.categoryOpen })
 			this.props.handleCategoryClick(id)
 		} else {
-			this.props.handleSectionBodyClick()
+			this.props.handleSectionBodyClick(id)
 		}
 	}
 	render() {

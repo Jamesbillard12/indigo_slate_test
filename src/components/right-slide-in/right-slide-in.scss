@@ -32,6 +32,10 @@
 			cursor: pointer;
 		}
 	}
+	&__content {
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
 }
 
 .right-slide-in.open {

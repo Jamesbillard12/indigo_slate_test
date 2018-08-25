@@ -6,7 +6,12 @@ const SectionItem = props => {
 	return (
 		<div className={props.menuOpen ? 'section-item fadein' : 'section-item'}>
 			<div
-				onClick={() => props.handleSectionBodyClick(props.section.id)}
+				onClick={() => {
+					props.handleSectionBodyClick(props.section.id)
+					props.handleUpdateSiteLocationSection(props.section.name).then(() => {
+						props.handleCreateSiteLocation()
+					})
+				}}
 				className={
 					props.selected ? 'section-item__body--selected' : 'section-item__body'
 				}
@@ -27,7 +32,10 @@ const SectionItem = props => {
 			{renderIf(
 				props.section.categories.length,
 				<div
-					onClick={() => props.handleSectionArrowClick(props.section.id)}
+					onClick={() => {
+						props.handleSectionArrowClick(props.section.id)
+						props.handleUpdateSiteLocationSection(props.section.name)
+					}}
 					className={
 						props.selected
 							? 'section-item__arrow_right--selected'

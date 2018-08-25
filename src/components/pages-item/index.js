@@ -4,7 +4,12 @@ import React from 'react'
 const PagesItem = props => {
 	return (
 		<div
-			// onClick={() => this.handleCategoryOpen(this.props.category.id)}
+			onClick={() => {
+				props.handleUpdateSiteLocationPage(props.page.name).then(() => {
+					props.handleCreateSiteLocation()
+					props.handleSectionBodyClick()
+				})
+			}}
 			className="pages-item"
 		>
 			<div className="pages-item__body">

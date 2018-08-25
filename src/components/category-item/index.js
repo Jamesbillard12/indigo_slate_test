@@ -10,8 +10,14 @@ class CategoryItem extends React.Component {
 		if (this.props.category.pages.length) {
 			this.setState({ categoryOpen: !this.state.categoryOpen })
 			this.props.handleCategoryClick(id)
+			this.props.handleUpdateSiteLocationCategory(this.props.category.name)
 		} else {
 			this.props.handleSectionBodyClick()
+			this.props
+				.handleUpdateSiteLocationCategory(this.props.category.name)
+				.then(() => {
+					this.props.handleCreateSiteLocation()
+				})
 		}
 	}
 	render() {

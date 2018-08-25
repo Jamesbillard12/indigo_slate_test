@@ -8,12 +8,17 @@ import Sections from '../../../data/sections.js'
 
 class Landing extends React.Component {
 	state = {
+		user: 'Donovan Beck',
 		menuOpen: false,
 		menuOpenRight: false,
 		sections: Sections,
 		sectionId: '',
 		selectedSection: { categories: [] },
-		categoryIdArr: []
+		categoryIdArr: [],
+		sectionTitle: undefined,
+		categoryTitle: undefined,
+		pageTitle: undefined,
+		siteLocation: undefined
 	}
 
 	handleUpdateCategoryIdArr = arr => {
@@ -42,6 +47,39 @@ class Landing extends React.Component {
 			menuOpenRight: false
 		})
 	}
+
+	handleUpdateSiteLocationSection = section => {
+		return new Promise(resolve => {
+			this.setState(
+				{
+					sectionTitle: section,
+					categoryTitle: undefined,
+					pageTitle: undefined
+				},
+				() => resolve('')
+			)
+		})
+	}
+	handleUpdateSiteLocationCategory = category => {
+		return new Promise(resolve => {
+			this.setState({ categoryTitle: category, pageTitle: undefined }, () =>
+				resolve('')
+			)
+		})
+	}
+	handleUpdateSiteLocationPage = page => {
+		return new Promise(resolve => {
+			this.setState({ pageTitle: page }, () => resolve(''))
+		})
+	}
+
+	handleCreateSiteLocation = () => {
+		let siteLocation = `${this.state.sectionTitle} ${
+			this.state.categoryTitle ? '> ' + this.state.categoryTitle : ''
+		} ${this.state.pageTitle ? '> ' + this.state.pageTitle : ''}`
+		this.setState({ siteLocation: siteLocation })
+	}
+
 	handleSectionArrowClick = id => {
 		if (id === '') {
 			this.setState({
@@ -79,14 +117,17 @@ class Landing extends React.Component {
 					menuOpen={this.state.menuOpen}
 					handleMenuOpenClose={this.handleMenuOpenClose}
 				/>
-				<SiteLocationBar />
+				<SiteLocationBar siteLocation={this.state.siteLocation} />
 				<LeftSlideIn
+					user={this.state.user}
 					sections={this.state.sections}
 					menuOpen={this.state.menuOpen}
 					menuOpenRight={this.state.menuOpenRight}
 					selectedSection={this.state.selectedSection}
 					handleSectionArrowClick={this.handleSectionArrowClick}
 					handleSectionBodyClick={this.handleSectionBodyClick}
+					handleUpdateSiteLocationSection={this.handleUpdateSiteLocationSection}
+					handleCreateSiteLocation={this.handleCreateSiteLocation}
 				/>
 
 				<RightSlideIn
@@ -96,6 +137,11 @@ class Landing extends React.Component {
 					handleSectionArrowClick={this.handleSectionArrowClick}
 					handleSectionBodyClick={this.handleSectionBodyClick}
 					handleUpdateCategoryIdArr={this.handleUpdateCategoryIdArr}
+					handleCreateSiteLocation={this.handleCreateSiteLocation}
+					handleUpdateSiteLocationCategory={
+						this.handleUpdateSiteLocationCategory
+					}
+					handleUpdateSiteLocationPage={this.handleUpdateSiteLocationPage}
 				/>
 			</div>
 		)

@@ -40,6 +40,10 @@ class LeftSlideIn extends React.Component {
 								key={section.id}
 								section={section}
 								menuOpen={this.props.menuOpen}
+								handleUpdateSiteLocationSection={
+									this.props.handleUpdateSiteLocationSection
+								}
+								handleCreateSiteLocation={this.props.handleCreateSiteLocation}
 							/>
 						)
 					})}

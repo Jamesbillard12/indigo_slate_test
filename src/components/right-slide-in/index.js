@@ -47,7 +47,10 @@ class RightSlideIn extends React.Component {
 					/>
 				</div>
 
-				<div className="right-slide-in__content">
+				<div
+					style={{ height: `calc(${window.innerHeight}px - 23rem)` }}
+					className="right-slide-in__content"
+				>
 					{this.props.section.categories.map(category => {
 						return (
 							<Fragment>

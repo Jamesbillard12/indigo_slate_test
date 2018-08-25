@@ -15,7 +15,16 @@ class LeftSlideIn extends React.Component {
 					</p>
 				</div>
 				<div
-					style={{ height: `calc(${window.innerHeight}px - 17rem)` }}
+					style={
+						this.props.menuOpenRight
+							? {
+									height: `calc(${window.innerHeight}px - 17rem)`,
+									overflow: 'hidden'
+							  }
+							: {
+									height: `calc(${window.innerHeight}px - 17rem)`
+							  }
+					}
 					className="left-slide-in__content"
 				>
 					{this.props.sections.map(section => {

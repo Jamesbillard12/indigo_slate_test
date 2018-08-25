@@ -78,6 +78,7 @@ class Landing extends React.Component {
 				<LeftSlideIn
 					sections={this.state.sections}
 					menuOpen={this.state.menuOpen}
+					menuOpenRight={this.state.menuOpenRight}
 					selectedSection={this.state.selectedSection}
 					handleSectionArrowClick={this.handleSectionArrowClick}
 					handleSectionBodyClick={this.handleSectionBodyClick}

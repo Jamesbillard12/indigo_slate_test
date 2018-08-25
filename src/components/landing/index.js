@@ -13,14 +13,20 @@ class Landing extends React.Component {
 		menuOpenRight: false,
 		sections: Sections,
 		sectionId: '',
-		selectedSection: { categories: [] }
+		selectedSection: { categories: [] },
+		categoryIdArr: []
+	}
+
+	handleUpdateCategoryIdArr = arr => {
+		this.setState({ categoryIdArr: arr })
 	}
 
 	handleMenuOpenClose = () => {
 		this.setState({
 			menuOpen: !this.state.menuOpen,
 			menuOpenRight: false,
-			selectedSection: { categories: [] }
+			selectedSection: { categories: [] },
+			categoryIdArr: []
 		})
 	}
 
@@ -85,10 +91,12 @@ class Landing extends React.Component {
 				/>
 
 				<RightSlideIn
+					categoryIdArr={this.state.categoryIdArr}
 					section={this.state.selectedSection}
 					menuOpenRight={this.state.menuOpenRight}
 					handleSectionArrowClick={this.handleSectionArrowClick}
 					handleSectionBodyClick={this.handleSectionBodyClick}
+					handleUpdateCategoryIdArr={this.handleUpdateCategoryIdArr}
 				/>
 			</div>
 		)

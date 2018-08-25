@@ -13,7 +13,10 @@ class Landing extends React.Component {
 		sections: Sections,
 		sectionId: '',
 		selectedSection: { categories: [] },
-		categoryIdArr: []
+		categoryIdArr: [],
+		sectionTitle: undefined,
+		categoryTitle: undefined,
+		pageTitle: undefined
 	}
 
 	handleUpdateCategoryIdArr = arr => {
@@ -42,6 +45,17 @@ class Landing extends React.Component {
 			menuOpenRight: false
 		})
 	}
+
+	handleUpdateSiteLocationSection = section => {
+		this.setState({ sectionTitle: section })
+	}
+	handleUpdateSiteLocationCategory = category => {
+		this.setState({ categoryTitle: category })
+	}
+	handleUpdateSiteLocationPage = page => {
+		this.setState({ pageTitle: page })
+	}
+
 	handleSectionArrowClick = id => {
 		if (id === '') {
 			this.setState({
@@ -79,7 +93,11 @@ class Landing extends React.Component {
 					menuOpen={this.state.menuOpen}
 					handleMenuOpenClose={this.handleMenuOpenClose}
 				/>
-				<SiteLocationBar />
+				<SiteLocationBar
+					sectionTitle={this.state.sectionTitle}
+					categoryTitle={this.state.categoryTitle}
+					pageTitle={this.state.pageTitle}
+				/>
 				<LeftSlideIn
 					sections={this.state.sections}
 					menuOpen={this.state.menuOpen}
@@ -87,6 +105,7 @@ class Landing extends React.Component {
 					selectedSection={this.state.selectedSection}
 					handleSectionArrowClick={this.handleSectionArrowClick}
 					handleSectionBodyClick={this.handleSectionBodyClick}
+					handleUpdateSiteLocationSection={this.handleUpdateSiteLocationSection}
 				/>
 
 				<RightSlideIn
